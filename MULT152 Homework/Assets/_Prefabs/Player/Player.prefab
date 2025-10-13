@@ -435,7 +435,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4083376561798325413}
         m_TargetAssemblyTypeName: InputBridge, Assembly-CSharp
-        m_MethodName: OnCrouch
+        m_MethodName: OnJump
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -451,7 +451,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4083376561798325413}
         m_TargetAssemblyTypeName: InputBridge, Assembly-CSharp
-        m_MethodName: OnCrouch
+        m_MethodName: OnFire
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -467,7 +467,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4083376561798325413}
         m_TargetAssemblyTypeName: InputBridge, Assembly-CSharp
-        m_MethodName: OnCrouch
+        m_MethodName: OnReload
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
