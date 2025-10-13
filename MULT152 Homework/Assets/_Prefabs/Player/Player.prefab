@@ -227,7 +227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: edc2a83918346d14cbe020c6f3da2a8e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -314,6 +314,7 @@ MonoBehaviour:
   walkSpeed: 3.5
   runSpeed: 6
   crouchSpeed: 1.8
+  moveDeadzone: 0.15
   accelTime: 0.12
   decelTime: 0.2
   gravity: -20
@@ -327,6 +328,7 @@ MonoBehaviour:
   staminaDrainPerSec: 1.5
   staminaRegenPerSec: 1
   sprintCooldown: 0.25
+  jumpForce: 8
 --- !u!114 &4083376561798325413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +431,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a2b73c89-fa42-402f-9f1b-ccba4d522c56
     m_ActionName: 'Player/Crouch[/Keyboard/leftCtrl]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4083376561798325413}
+        m_TargetAssemblyTypeName: InputBridge, Assembly-CSharp
+        m_MethodName: OnCrouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4bfed697-3848-47e9-8ecb-027df881db85
+    m_ActionName: 'Player/Jump[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4083376561798325413}
+        m_TargetAssemblyTypeName: InputBridge, Assembly-CSharp
+        m_MethodName: OnCrouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9115b19d-11ba-4ddd-8ee7-4b342c14ec5f
+    m_ActionName: 'Player/Fire[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4083376561798325413}
+        m_TargetAssemblyTypeName: InputBridge, Assembly-CSharp
+        m_MethodName: OnCrouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b06f911e-f5cb-4591-8ad9-f7e45d910eed
+    m_ActionName: 'Player/Reload[/Keyboard/r]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
