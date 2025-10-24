@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     [Header("Health Settings")]
     public float maxHealth = 100f;
     private float currentHealth;
+    public TextMeshProUGUI hpText;
 
     [Header("UI")]
     public Slider healthSlider;   // Drag your Slider here in the Inspector
@@ -33,6 +35,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0f) return;
 
         currentHealth = Mathf.Max(0f, currentHealth - amount);
+        if (hpText != null) hpText.text = $"{currentHealth}/{maxHealth}";
         UpdateHealthBar();
 
         if (currentHealth <= 0f)

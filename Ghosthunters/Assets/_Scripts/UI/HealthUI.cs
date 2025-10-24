@@ -6,6 +6,7 @@ public class HealthUI : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private HealthComponent target;
+    [SerializeField] private EnemyHealth enemy;
     [SerializeField] private Slider bar;
 
     [Header("TEXT Fields")]
