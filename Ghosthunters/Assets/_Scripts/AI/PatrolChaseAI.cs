@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 
 public class PatrolChaseAI : MonoBehaviour
 {
@@ -22,12 +23,19 @@ public class PatrolChaseAI : MonoBehaviour
     [Header("Collision")]
     public string playerTag = "Player"; // tag to check for destroy on hit
 
+    [Header("Audio")]
+    private AudioSource AudioSource;
+    public AudioMixerGroup mixer;
+    public AudioClip ghost;
+
     enum State { Patrol, Chase }
     State state = State.Patrol;
     int index; float wait; float timer;
 
     void Start()
     {
+        AudioSource = GetComponent<AudioSource>();
+
         if (!agent) agent = GetComponent<NavMeshAgent>();
         if (points != null && points.Length > 0)
             SafeSetDestination(points[0].position);
@@ -48,6 +56,7 @@ public class PatrolChaseAI : MonoBehaviour
                 if (player && dist <= chaseDistance && hasLOS)
                 {
                     state = State.Chase;
+                    AudioSource.Stop();
                     Debug.Log("State changed to CHASE");
                     agent.ResetPath();
                 }
@@ -62,6 +71,7 @@ public class PatrolChaseAI : MonoBehaviour
                 if (dist >= loseDistance || !hasLOS)
                 {
                     state = State.Patrol;
+                    AudioSource.PlayOneShot(ghost);
                     Debug.Log("State changed to PATROL");
                     agent.ResetPath();
                     if (points != null && points.Length > 0)

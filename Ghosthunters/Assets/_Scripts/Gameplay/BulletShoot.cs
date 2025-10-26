@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BulletShoot : MonoBehaviour
 {
@@ -7,12 +8,18 @@ public class BulletShoot : MonoBehaviour
     [SerializeField] private AmmoUI ui;
     [SerializeField] private InputBridge input;
 
-    private int current = 30;
-    private int magSize = 30;
-    private int reserves = 360;
+    public int current = 30;
+    public int magSize = 30;
+    public int reserves = 360;
+
+    private AudioSource AudioSource;
+    public AudioMixerGroup mixer;
+    public AudioClip fireSFX;
 
     void Start()
     {
+        AudioSource = GetComponent<AudioSource>();
+
         if (ui != null)
         {
             ui.Set(current, magSize, reserves);
@@ -33,6 +40,7 @@ public class BulletShoot : MonoBehaviour
         {
             current--;
             ui.Set(current, magSize, reserves);
+            AudioSource.PlayOneShot(fireSFX);
             var it = Instantiate(bullet, transform.position, transform.rotation);
             Debug.Log($"[AmmoSim] Fired! Ammo: {current}/{magSize} ({reserves})");
         }

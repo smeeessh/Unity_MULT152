@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
@@ -15,8 +16,14 @@ public class EnemyHealth : MonoBehaviour
 
     private CanvasGroup canvasGroup;
 
+    [Header("Audio")]
+    private AudioSource AudioSource;
+    public AudioMixerGroup mixer;
+    public AudioClip deathSFX;
+
     void Awake()
     {
+        AudioSource = GetComponent<AudioSource>();
         currentHealth = maxHealth;
 
         if (healthSlider != null)
@@ -65,6 +72,7 @@ public class EnemyHealth : MonoBehaviour
     {
         // death logic
         Debug.Log($"{gameObject.name} died.");
+        AudioSource.PlayOneShot(deathSFX);
         Destroy(gameObject); // or trigger animations/effects instead
     }
 }
