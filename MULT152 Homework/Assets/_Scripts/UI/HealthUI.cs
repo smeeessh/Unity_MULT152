@@ -10,7 +10,7 @@ public class HealthUI : MonoBehaviour
 
     [Header("TEXT Fields")]
     [SerializeField] private UnityEngine.UI.Text legacyLabel;
-    [SerializeField] private TextMeshProUGUI playerLabel;
+    [SerializeField] private UnityEngine.UI.Text playerLabel;
     [SerializeField] private TextMeshProUGUI tmpLabel;
 
     void Start()

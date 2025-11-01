@@ -4,7 +4,9 @@ using UnityEngine.InputSystem;
 public class AmmoSim : MonoBehaviour
 {
     [SerializeField] private AmmoUI ui;
-    [SerializeField] private InputBridge input; 
+    [SerializeField] private InputBridge input;
+
+    [SerializeField] private UITK_HUD hud; 
 
     private int current = 30;
     private int magSize = 30;
@@ -32,6 +34,7 @@ void Update()
         {
             current--;
             ui.Set(current, magSize, reserves);
+            hud.SetAmmo(current, magSize, reserves);
             Debug.Log($"[AmmoSim] Fired! Ammo: {current}/{magSize} ({reserves})");
         }
 
@@ -43,6 +46,7 @@ void Update()
             current += take;
             reserves -= take;
             ui.Set(current, magSize, reserves);
+            hud.SetAmmo(current, magSize, reserves);
             Debug.Log($"[AmmoSim] Reloaded! Ammo: {current}/{magSize} ({reserves})");
         }
     }
