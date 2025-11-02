@@ -30910,9 +30910,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.53333336
-    functionName: Punch
+    functionName: playAudio
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: f728d3ad9c2a4214299eec6ac9c1fc18, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
