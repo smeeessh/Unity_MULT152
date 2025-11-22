@@ -34,7 +34,7 @@ void Update()
         {
             current--;
             ui.Set(current, magSize, reserves);
-            hud.SetAmmo(current, magSize, reserves);
+            //hud.SetAmmo(current, magSize, reserves);
             Debug.Log($"[AmmoSim] Fired! Ammo: {current}/{magSize} ({reserves})");
         }
 
@@ -46,7 +46,7 @@ void Update()
             current += take;
             reserves -= take;
             ui.Set(current, magSize, reserves);
-            hud.SetAmmo(current, magSize, reserves);
+            //hud.SetAmmo(current, magSize, reserves);
             Debug.Log($"[AmmoSim] Reloaded! Ammo: {current}/{magSize} ({reserves})");
         }
     }
